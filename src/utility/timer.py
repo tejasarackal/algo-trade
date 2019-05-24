@@ -13,7 +13,7 @@ def timer(func):
 
 
 def log(func, start, end):
-    with connect('database/logger') as conn:
+    with connect('src/database/logger') as conn:
         cur = conn.cursor()
         try:
             cur.execute('create table process_log(function text, process_start time, process_end time)')

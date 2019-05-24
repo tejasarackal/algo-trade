@@ -1,4 +1,26 @@
-.idea/*
+# Pycharm
+.idea
+
+# Python Byte compiled code
 *__pycache__/
-database/*
-trade-data/*
+*.py[cod]
+
+# Exclude data from source control by default
+/data/
+
+# DotEnv configuration
+.env
+
+# Database
+*.db
+*.rdb
+
+# Jupyter NB Checkpoints
+.ipynb_checkpoints/
+
+# Mac OS-specific storage files
+.DS_Store
+
+# vim
+*.swp
+*.swo
