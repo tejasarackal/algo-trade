@@ -15,13 +15,13 @@ def clean_data(stock_df):
 @timer
 def stock_info(tikr, start_year, end_year):
     """ stock info retrieves the stock price info for the company for a given year """
-    if Path(f'data/raw/{tikr}_{start_year}_{end_year}').is_file():
+    if Path(f'data/raw/{tikr}_{start_year}_{end_year}.db').is_file():
         # if data is stored locally fetch it
-        df = pd.read_csv(f'data/raw/{tikr}_{start_year}_{end_year}', parse_dates=True, index_col=0)
+        df = pd.read_csv(f'data/raw/{tikr}_{start_year}_{end_year}.db', parse_dates=True, index_col=0)
     else:
         # retrieve info from web and store it locally
         df = web.DataReader(tikr, 'yahoo', dt.datetime(start_year,1,1), dt.datetime(end_year,12,31))
-        df.to_csv(f'data/raw/{tikr}_{start_year}_{end_year}')
+        df.to_csv(f'data/raw/{tikr}_{start_year}_{end_year}.db')
     return clean_data(df)
 
 

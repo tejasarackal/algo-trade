@@ -21,7 +21,7 @@ if __name__ == '__main__':
     forecast_model = PredictModel(linear_model.classifier)
     forecast_model.predict(linear_model.x[-10:])
 
-    tsla_stock = stock.forecast_stock(tsla_stock, forecast_model.get_outcome())
+    tsla_stock = stock.forecast_stock(tsla_stock, forecast_model.get_outcomes())
 
     print(tsla_stock.tail())
 
