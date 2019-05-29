@@ -7,3 +7,5 @@ tensorflow
 keras
 jupyter
 ipython-sql
+jupytext
+nb_conda
