@@ -10,14 +10,14 @@ class TrainModel(BaseModel):
         super().__init__()
         self.set_classifier(classifier)
 
-    def train(self, stock_df, test_percent=0.2):
+    def train(self, stock_df, label='label', test_percent=0.2):
 
         # data cleansing
         clean_stock_df = stock_df.dropna(inplace=False)
 
         # deriving features and outcome from the data to be trained upon
-        self.x = build_features(clean_stock_df)
-        self.y = outcome(clean_stock_df)
+        self.x = build_features(clean_stock_df, label)
+        self.y = outcome(clean_stock_df, label)
 
         # split data into training and test data set
         x_train, x_test, y_train, y_test = train_test_split(self.x, self.y, test_size=test_percent)
@@ -26,4 +26,4 @@ class TrainModel(BaseModel):
         self.classifier.fit(x_train, y_train)
 
         # now we calculate the accuracy of our linear model
-        print(self.classifier.score(x_test, y_test))
+        print(f'Accuracy: {self.classifier.score(x_test, y_test)}')
