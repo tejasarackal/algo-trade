@@ -24,3 +24,6 @@
 # vim
 *.swp
 *.swo
+
+# Logger
+src/database/*
