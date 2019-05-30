@@ -1,9 +1,10 @@
 from sklearn.linear_model import LinearRegression
-from sklearn import svm
+from sklearn.svm import SVR
+from sklearn.neighbors import KNeighborsClassifier
 
 
 class BaseModel:
-    _models = {'linear': LinearRegression, 'svm': svm.SVR}
+    _models = {'linear': LinearRegression, 'svm': SVR, 'knn': KNeighborsClassifier}
 
     def __init__(self):
         self.x = None
