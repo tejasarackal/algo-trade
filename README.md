@@ -1,7 +1,7 @@
 Fin-Trade
 ==============================
 
-Data Science project to learn finance data models and possibly implement trading algorithms with broker api's
+Data Science project to learn Quantopian zipline backtesting data model and possibly implement trading algorithms with api's
 
 Project Organization
 ------------

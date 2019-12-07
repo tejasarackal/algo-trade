@@ -1,0 +1,10 @@
+# creating conda environment for zipline
+$ conda create -n quant35 python=3.5
+
+# install the zipline package
+$ conda activate quant35
+$ conda install -c Quantopian zipline
+
+# create and account at https://www.quandl.com/ and get the api
+# ingesting data bundles quandl (default)
+$ QUANDL_API_KEY=RBB_1teSWoSWUcr5ajCW zipline ingest -b quandl
